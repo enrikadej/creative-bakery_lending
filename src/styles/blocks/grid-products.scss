@@ -1,0 +1,24 @@
+.grid-products {
+  @include onTablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  @include onNotebook {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  &__product-card {
+
+    @for $begin from 1 through 8 {
+      @for $end from $begin through 8 {
+        &--grid-column-#{$begin}-#{$end} {
+          @include onNotebook {
+            grid-column: #{$begin} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,136 @@
+.about-us {
+  margin-top: 80px;
+
+  background-image: url(../images/Crumbs.svg);
+  background-size: 526px 493px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+    row-gap: 80px;
+
+    margin-top: 160px;
+  }
+
+  @include onNotebook {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 24px;
+    row-gap: 144px;
+
+    margin-top: 160px;
+
+    grid-template-areas:
+      "about-us-title about-us-title about-us-paragraph about-us-paragraph"
+      "year stores companies clients"
+    ;
+  }
+
+  &__title {
+    width: 288px;
+    font-weight: 400;
+    font-size: 48px;
+
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      width: 328px;
+      font-size: 56px;
+    }
+
+    @include onNotebook {
+      grid-area: about-us-title;
+
+      width: 544px;
+      font-size: 72px;
+    }
+  }
+
+  &__paragraph {
+
+    width: 288px;
+    margin-top: 32px;
+    line-height: 150%;
+
+    @include onTablet {
+      width: 328px;
+      margin-top: 0;
+    }
+
+    @include onNotebook {
+      grid-area: about-us-paragraph;
+      width: 544px;
+    }
+  }
+
+  &__year {
+    margin-top: 64px;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+
+    @include onNotebook {
+      grid-area: year;
+    }
+  }
+
+  &__stores {
+    margin-top: 48px;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+
+    @include onNotebook {
+      grid-area: stores;
+    }
+  }
+
+  &__companies {
+    margin-top: 48px;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+
+    @include onNotebook {
+      grid-area: companies;
+
+    }
+  }
+
+  &__clients {
+    margin: 48px 0 72px;
+
+    @include onTablet {
+      margin: 0 0 152px;
+    }
+
+    @include onNotebook {
+      grid-area: clients;
+      margin: 0 0 349px;
+    }
+
+  }
+
+  &__digit {
+    font-size: 96px;
+    line-height: 85%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+  }
+
+  &__epithet {
+    margin-top: 8px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: #7f8096;
+  }
+
+}

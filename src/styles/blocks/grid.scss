@@ -1,0 +1,79 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+
+  @include onTablet {
+    display: grid;
+    grid-template-rows: 80px 48px 146px 68px 230px 1fr;
+    grid-template-columns: repeat(8, 1fr);
+
+  }
+
+  @include onNotebook {
+    display: grid;
+    grid-template-rows: 135px 72px 8px 116px 84px 1fr;
+    grid-template-columns: repeat(288px, 1fr);
+
+  }
+
+  @include onDesktop {
+    display: grid;
+    grid-template-rows: 135px 72px 8px 116px 84px 1fr;
+    grid-template-columns: repeat(288px, 1fr);
+
+  }
+
+  &__item {
+    justify-items: center;
+
+    // loop for tablet column
+
+    @for $begin from 1 through 8 {
+      @for $end from $begin through 8 {
+        &--tablet-column-#{$begin}-#{$end} {
+          @include onTablet {
+            grid-column: #{$begin} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    // loop for Notebook column (1200px)
+
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--notebook-column-#{$start}-#{$end} {
+          @include onNotebook {
+            grid-column: #{$start} / #{$end};
+          }
+        }
+      }
+    }
+
+    // loop for tablet row
+
+    @for $begin from 1 through 8 {
+      @for $end from $begin through 8 {
+        &--tablet-row-#{$begin}-#{$end} {
+          @include onTablet {
+            grid-row: #{$begin} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    // loop for Notebook row (1200px)
+
+    @for $start from 1 through 8 {
+      @for $end from $start through 8 {
+        &--notebook-row-#{$start}-#{$end} {
+          @include onNotebook {
+            grid-row: #{$start} / #{$end};
+          }
+        }
+      }
+    }
+  }
+}

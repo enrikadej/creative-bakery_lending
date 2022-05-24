@@ -1,0 +1,8 @@
+.menu {
+  background-color: $page-background;
+
+  &__content {
+    height: 100vh;
+    transform: translateY(25%);
+  }
+}

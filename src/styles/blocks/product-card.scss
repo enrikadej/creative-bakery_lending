@@ -1,0 +1,98 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 64px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__photo {
+    width: 288px;
+    height: 356px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include onTablet {
+      width: 328px;
+      height: 424px;
+    }
+
+    @include onNotebook {
+      width: 402px;
+      height: 512px;
+    }
+
+    @include onDesktop {
+      width: 432px;
+      height: 560px;
+    }
+  }
+
+  &__name {
+    margin-top: 16px;
+    font-weight: 500;
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: #7f8096;
+
+  }
+
+  &__description {
+    margin-top: 8px;
+    width: 288px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    letter-spacing: -0.01em;
+
+    @include onTablet {
+      width: 328px;
+    }
+
+    @include onNotebook {
+      width: 402px;
+    }
+
+    @include onDesktop {
+      width: 432px;
+    }
+  }
+
+  &__order-link {
+    margin-top: 20px;
+    padding: 4px 1px 4px 28px;
+    font-weight: 500;
+
+    text-transform: uppercase;
+    color: #f9512e;
+
+    transition: transform 0.2s, color 0.2s;
+
+    &::before {
+      content: "";
+      display: block;
+      position: relative;
+      transform: translate(-140%, 100%);
+      width: 16px;
+      height: 16px;
+      background-image: url(../images/arrow.svg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &:hover {
+      transform: translateX(1.2px);
+      color: rgb(199, 56, 27);
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & .nav__link {
+    padding: 32px;
+  }
+  
+  &__title {
+    padding: 20px;
+
+    @include onNotebook {
+      padding: 32px 26px;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include onNotebook {
+      display: block;
+    }
+  }
+
+  &__menu-opener {
+    padding: 28px 18px;
+
+    @include onNotebook {
+      display: none;
+    }
+  }
+
+  &__menu-closer {
+    padding: 28px 18px;
+
+    @include onNotebook {
+      display: none;
+    }
+  }
+}

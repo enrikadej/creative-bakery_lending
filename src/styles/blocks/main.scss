@@ -1,0 +1,15 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+  align-items: center;
+
+  @include onTablet {
+    padding: 0 44px;
+
+    &__products {
+      margin-top: 240px;
+    }
+  }
+
+}

@@ -1,0 +1,11 @@
+.header {
+  height: 100vh;
+
+  &__front {
+    padding: 0 16px;
+
+    @include onTablet {
+      padding: 0 44px;
+    }
+  }
+}

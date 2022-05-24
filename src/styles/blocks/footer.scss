@@ -1,0 +1,241 @@
+.footer {
+  box-sizing: border-box;
+  height: 914px;
+
+  padding: 0 16px;
+  background-color: #1c1a26;
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 50% 1fr;
+    grid-template-areas:
+      "logo contact-us"
+      "menu call-us"
+      "menu email-us"
+      "icons copyright"
+    ;
+
+    justify-content: space-between;
+    align-content: start;
+
+    height: 616px;
+    padding: 93px 44px 90px;
+  }
+
+  @include onNotebook {
+    grid-template-columns: 50% 284px 260px;
+    grid-template-rows: 1fr 50% 1fr;
+    grid-template-areas:
+      "logo contact-us contact-us"
+      "menu call-us email-us"
+      "icons copyright copyright"
+    ;
+
+    height: 525px;
+    padding: 93px 44px 90px 49px;
+  }
+
+  @include onDesktop {
+    grid-template-columns: 50% 304px 280px;
+    padding: 93px 124px 90px 129px;
+  }
+
+  &__title {
+    grid-area: logo;
+    padding: 61px 0 0 21px;
+
+    @include onTablet {
+      padding: 0;
+    }
+  }
+
+  &__title--mini {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    /* identical to box height, or 16px */
+
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    /* Grey */
+
+    color: #7f8096;
+
+  }
+
+  &__title--big {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #fff;
+
+    @include onTablet {
+      font-size: 56px;
+    }
+
+    @include onNotebook {
+      font-size: 72px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__list--row {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  &__link {
+    padding: 8px 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    letter-spacing: -0.01em;
+    color: #fff;
+
+    text-decoration: none;
+
+    &:hover {
+      color: #f9512e;
+    }
+
+  }
+
+  &__link-icon {
+    display: inline-block;
+    padding: 5px;
+    width: 20px;
+    height: 20px;
+
+
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &--fb {
+      background-image: url(../images/facebook-icon.svg);
+
+      &:hover {
+        background-image: url(../images/facebook-white-icon.svg);
+      }
+    }
+
+    &--inst {
+      background-image: url(../images/instagram-icon.svg);
+
+      &:hover {
+        background-image: url(../images/instagram-white-icon.svg);
+      }
+    }
+
+    &--tw {
+      background-image: url(../images/twitter-icon.svg);
+
+      &:hover {
+        background-image: url(../images/twitter-white-icon.svg);
+      }
+    }
+
+    // &:hover {
+    //   background-image: url(../../images/facebook-white-icon.svg);
+    // }
+  }
+
+  &__icon:hover {
+    fill: #fff;
+  }
+
+  &__menu {
+    grid-area: menu;
+    margin: 44px 0 0 ;
+
+    @include onTablet {
+      margin-top: 40px;
+    }
+
+    @include onNotebook {
+      margin-top: 0;
+    }
+  }
+
+  &__contact-us {
+    grid-area: contact-us;
+    margin: 64px 0 0;
+
+    @include onTablet {
+      margin: 0;
+      width: 328px;
+    }
+
+    @include onNotebook {
+      width: 544px;
+    }
+
+    @include onDesktop {
+      width: 584px;
+    }
+  }
+
+  &__call-us {
+    grid-area: call-us;
+    margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 40px;
+    }
+
+    @include onNotebook {
+      margin-top: 0;
+    }
+  }
+
+  &__email-us {
+    grid-area: email-us;
+    margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+  }
+
+  &__icons {
+    grid-area: icons;
+    margin-top: 42px;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+
+    @include onNotebook {
+      margin-top: 50px;
+    }
+  }
+
+  &__copyright {
+    grid-area: copyright;
+    margin-top: 42px;
+
+    line-height: 150%;
+
+    letter-spacing: -0.01em;
+    color: #7f8096;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+
+    @include onNotebook {
+      margin-top: 50px;
+    }
+  }
+}
